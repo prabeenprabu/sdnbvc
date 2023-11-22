@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+// -----------colors----------
+:root {
+    --primary: #2c3639;
+    --secondary: #3f4e4f;
+    --lt-brown: #a27b5c;
+    --white: #dcd7c9;
+    --red: #a05344;
+    --green: #9eb384;
+    --dk-green: #61764b;
+    --violet: #65647c;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Ubuntu" sans-serif;
+    background-color: var(--white);
+    color: var(--primary);
+}
+
+.start {
+    min-height: 90vh;
+}
+
+.name {
+    color: var(--dk-green);
+}
+.course {
+    color: var(--lt-brown);
+}
+
+.reg,
+.name {
+    font-weight: bold;
+}
+.reg {
+    position: relative;
+}
+.course {
+    font-weight: lighter;
+    position: absolute;
+    top: 0;
+    font-size: 0.9rem;
+    margin-left: 0.4rem;
+}
+
+.num {
+    position: relative;
+    margin-right: 1.3rem !important;
+}
+.res {
+    position: absolute;
+    top: 0;
+    font-weight: b;
+    font-size: 0.77rem;
+    color: var(--violet);
+}
+
+.logo {
+    color: var(--violet);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    // -webkit-text-fill-color: var(--primary) !important;
+}
+
+footer {
+    background-color: var(--primary);
+    padding: 0.5rem 0;
+    color: var(--white);
+    p {
+        color: var(--white);
+    }
+}
+footer:hover,
+footer p {
+    cursor: pointer;
+}
+
+.start .container {
+    min-height: 76vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.start .container .forms {
+    width: 100%;
+}
+.start .container .label {
+    display: flex;
+    align-items: center;
+}
+
+.content .name {
+    font-size: 1.4rem;
+}
+.content .mks {
+    position: relative;
+}
+.content .mks .num {
+    margin-right: 0.84rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.08cm;
+}
+.content .heading .title {
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+}
+.content .pass::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0.3rem;
+    height: 100%;
+    border-radius: 0.2rem 0 0 0.2rem;
+    background-color: var(--green);
+    box-shadow: -4px 0px 23px 1px rgb(82, 183, 136);
+    animation-name: flash;
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+.content .pass:nth-of-type(even):after {
+    animation-delay: calc(0.2s * var(--i));
+}
+.content .pass:nth-of-type(odd)::after {
+    animation-delay: calc(0.5s * var(--i));
+}
+.content .fail::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0.3rem;
+    height: 100%;
+    border-radius: 0.2rem 0 0 0.2rem;
+    background-color: var(--red);
+    box-shadow: -4px 0px 23px 1px rgb(230, 57, 70);
+    animation-name: flash;
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+.content .fail:nth-of-type(even)::after {
+    animation-delay: calc(0.1s * var(--i));
+}
+.content .fail:nth-of-type(odd):after {
+    animation-delay: calc(0.3s * var(--i));
+}
+
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--lt-brown);
+    padding: 14px 16px;
+    outline: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.btn {
+    border: 1px solid var(--lt-brown);
+    &:hover {
+        background: var(--lt-brown);
+        color: var(--white);
+    }
+}
+
+@keyframes flash {
+    25%,
+    75% {
+        box-shadow: none;
+    }
+}
+@media screen and (max-width: 480px) {
+    .num {
+        margin-top: 0.5rem;
+        margin-right: 0;
+    }
+} /*# sourceMappingURL=main.css.map */
