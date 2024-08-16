@@ -17,6 +17,11 @@ app = Flask(__name__)
 app.secret_key = os.urandom(32)
 
 
+"""
+The `index` function in this Python code snippet renders the "index.html" template for the routes
+'/','/home', and '/index'.
+:return: The `index()` function is returning the rendered template "index.html".
+"""
 @app.route('/')
 @app.route('/home')
 @app.route('/index')
@@ -99,7 +104,7 @@ def check():
             
             #adding variable in the session
             session['name'] = name
-            session['regNo'] = regNo
+            session['regNo'] = int(regNo)
             session['course'] = course
             session['marks'] = marks
             session['subs'] = subs
